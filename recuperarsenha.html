@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTalk - Recuperar Senha</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="CSS/recuperarsenha.css">
+
+  <!-- Fonte Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="logo">EduTalk</div>
+      <h2>Recuperar Senha</h2>
+
+      <form onsubmit="return recuperarSenha()">
+        <div class="input-group">
+          <label for="email">Digite seu email</label>
+          <input type="email" id="email" required>
+        </div>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <a href="index.html" class="back">Voltar ao login</a>
+    </div>
+
+    <div class="right">
+      <h1>ESQUECEU SUA SENHA?</h1>
+      <p>Digite seu email e enviaremos instruções<br>para redefinir sua senha.</p>
+      <img src="https://cdn-icons-png.flaticon.com/512/786/786205.png" alt="Recuperação" class="icon">
+    </div>
+  </div>
+
+  <script src="forgot.js"></script>
+</body>
+</html>

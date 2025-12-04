@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduTalk - Login</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/register.css">
+  <link rel="stylesheet" href="CSS/recuperarsenha.css">
+  <link rel="stylesheet" href="CSS/dashboard.css">
+  <!-- Fonte Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Lado Esquerdo -->
+    <div class="left">
+      <div class="login-box">
+        <div class="logo">EduTalk</div>
+        <h2>Faça seu Login</h2>
+        
+        <div class="input-group">
+          <input id="email" type="email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <input id="senha" type="password" placeholder="Senha" required>
+        </div>
+        <a href="recuperarsenha.html" class="forgot">Esqueceu sua senha?</a>
+        <button class="btn" onclick="login()">Continuar</button>
+        
+        <div class="google-btn">
+          <img src="https://www.svgrepo.com/show/355037/google.svg" width="20">
+          Continuar com o Google
+        </div>
+        
+        <!-- Link para registro -->
+        <a href="selecao.html" class="register">Ou cadastre-se</a>
+        
+      </div>
+    </div>
+
+    <!-- Linha preta central -->
+    <div class="divider"></div>
+
+    <!-- Lado Direito -->
+    <div class="right">
+      <h1>PARTICIPE AGORA<br>DESSA EXPERIÊNCIA</h1>
+      <div class="chat">
+        <div class="msg msg-blue">Olá. Bom dia, professor!</div>
+        <div class="msg msg-yellow">Bom dia. No que posso ajudar?</div>
+        <div class="msg msg-blue">Posso deixar o trabalho pra semana que vem? Tive imprevistos</div>
+        <div class="msg msg-yellow">Pode ser sim! Cuide-se bem.</div>
+        <div class="msg msg-blue">Muito obrigada, professor</div>
+      </div>
+      <p class="footer-text">
+        Contato direto com auxiliadores, organização de provas e tarefas, agilidade e muito mais!
+      </p>
+    </div>
+  </div>
+
+  <!-- JS no final -->
+  <script>
+    function login() {
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      // Verifica se as credenciais são válidas
+      if (email === 'admin' && senha === 'admin123') {
+        // Redireciona para a página dashboard.html
+        window.location.href = 'dashboard.html';
+      } else {
+        alert('Credenciais inválidas. Tente novamente.');
+      }
+    }
+  </script>
+</body>
+</html>

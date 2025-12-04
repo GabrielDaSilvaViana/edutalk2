@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu Talk</title>
+    <link rel="stylesheet" href="CSS/dashboard.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/notes.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">Edu Talk</div>
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <span class="material-icons">home</span> <span>Home</span>
+                </li>
+                <li class="nav-item" id="active-btn"> 
+                    <span class="material-icons">explore</span> <span>Active</span>
+                </li>
+                <li class="nav-item">
+                    <span class="material-icons">videocam</span> <span>New Meeting</span>
+                </li>
+                <li class="nav-item" id="calendario-btn"> 
+                    <span class="material-icons">calendar_today</span> <span>Calendar</span>
+                </li>
+                <li class="nav-item">
+                    <span class="material-icons">edit_note</span> <span>Notes</span>
+                </li>
+            </ul>
+            <div class="nav-more">
+                <span class="material-icons">more_horiz</span> More
+            </div>
+        </nav>
+        
+        <aside class="conversations-panel">
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/40?u=deepak" alt="User Avatar" class="avatar">
+                <div class="user-info">
+                    <strong>Deepak</strong>
+                    <span>(You)</span>
+                </div>
+                <span class="material-icons">chevron_right</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search People">
+                <span class="material-icons">search</span>
+            </div>
+            <div class="contact-list">
+                <h3 class="list-title">#Group</h3>
+                <div class="contact-item active" data-name="Group 1" data-avatar="https://i.pravatar.cc/40?u=group1">
+                    <img src="https://i.pravatar.cc/40?u=group1" alt="Group 1 Avatar" class="avatar">
+                    <div class="contact-details"><strong>Group 1</strong></div>
+                    <span class="timestamp">Yesterday</span>
+                </div>
+                <div class="contact-item" data-name="Group 2" data-avatar="https://i.pravatar.cc/40?u=group2">
+                    <img src="https://i.pravatar.cc/40?u=group2" alt="Group 2 Avatar" class="avatar">
+                    <div class="contact-details"><strong>Group 2</strong></div>
+                    <span class="timestamp">Yesterday</span>
+                </div>
+
+                <h3 class="list-title">#Chat</h3>
+                <div class="contact-item" data-name="Alex Johnson" data-avatar="https://i.pravatar.cc/40?u=alex">
+                    <img src="https://i.pravatar.cc/40?u=alex" alt="Alex Johnson Avatar" class="avatar">
+                    <div class="contact-details"><strong>Alex Johnson</strong><span>Hey, how's it going?</span></div>
+                    <span class="timestamp">Today</span>
+                </div>
+                <div class="contact-item" data-name="Mehak" data-avatar="https://i.pravatar.cc/40?u=mehak">
+                    <img src="https://i.pravatar.cc/40?u=mehak" alt="Mehak Avatar" class="avatar">
+                    <div class="contact-details"><strong>Mehak</strong><span>Hi! How are you</span></div>
+                    <span class="timestamp">Monday</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-window">
+
+
+            <aside class="notes-panel" id="notes-panel" style="display:none;">
+                <header class="notes-header">
+                  <h3>Anotações</h3>
+                  <button id="close-notes-btn">X</button>
+                </header>
+                <textarea id="notes-textarea" placeholder="Digite suas anotações aqui..."></textarea>
+                <button id="save-notes-btn">Salvar</button>
+              </aside>
+              
+
+            <header class="chat-header">
+                <div class="chat-contact-info">
+                    <img src="https://i.pravatar.cc/40?u=alex" alt="Alex Johnson Avatar" class="avatar" id="chat-avatar">
+                    <div class="user-info">
+                        <strong id="chat-name">Alex Johnson</strong>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <span class="material-icons">search</span>
+                    <span class="material-icons">call</span>
+                    <span class="material-icons">videocam</span>
+                    <span class="material-icons">more_vert</span>
+                </div>
+            </header>
+
+            <div class="message-area">
+                <div class="message-date-divider"><span>Hoje</span></div>
+
+                <div class="message received">
+                    <div class="message-bubble">Hey, how's it going?</div>
+                    <div class="message-time">09:00 AM</div>
+                </div>
+                <div class="message sent">
+                    <div class="message-bubble">Hi Alex! I'm doing great, thanks!</div>
+                    <div class="message-time">09:05 AM</div>
+                </div>
+                <div class="message received">
+                    <div class="message-bubble">That's awesome! Let's catch up soon.</div>
+                    <div class="message-time">09:10 AM</div>
+                </div>
+            </div>
+
+            <footer class="chat-footer">
+                <div class="input-area">
+                    <span class="material-icons">add_circle_outline</span>
+                    <input type="text" id="message-input" placeholder="Digite uma mensagem...">
+                    <span class="material-icons">sentiment_satisfied_alt</span>
+                    <span class="material-icons">alternate_email</span>
+                    <span class="material-icons">mic</span>
+                </div>
+                <button class="send-button" id="send-button">
+                    <span class="material-icons">send</span>
+                </button>
+            </footer>
+        </main>
+    </div>
+
+    <div class="calendario-popup" id="calendario-popup">
+        <div class="calendario-header">
+            <button class="month-nav-btn" id="prev-month-btn">&lt;</button>
+            <h4 id="month-year"></h4>
+            <button class="month-nav-btn" id="next-month-btn">&gt;</button>
+        </div>
+        <div class="calendario-grid">
+            <div class="weekday">Dom</div>
+            <div class="weekday">Seg</div>
+            <div class="weekday">Ter</div>
+            <div class="weekday">Qua</div>
+            <div class="weekday">Qui</div>
+            <div class="weekday">Sex</div>
+            <div class="weekday">Sáb</div>
+        </div>
+        <div class="calendario-grid" id="calendario-days-grid">
+        </div>
+    </div>
+
+    <!-- Pop-up para Perfil -->
+    <div class="profile-popup" id="profile-popup">
+        <div class="popup-header">
+            <span class="material-icons close-popup" id="close-profile-btn">close</span>
+            <h2>Perfil</h2>
+        </div>
+        <div class="popup-content">
+            <div class="profile-avatar">
+                <img src="https://i.pravatar.cc/150?u=deepak" alt="Avatar do Usuário">
+            </div>
+            <div class="profile-info">
+                <h3>Deepak</h3>
+                <p>(Você)</p>
+            </div>
+            <div class="profile-actions">
+                <button class="popup-btn" id="edit-profile-btn">Editar Perfil</button>
+                <button class="popup-btn" id="settings-btn">Configurações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up para Editar Perfil -->
+    <div class="edit-profile-popup" id="edit-profile-popup">
+        <div class="popup-header">
+            <span class="material-icons close-popup" id="close-edit-profile-btn">close</span>
+            <h2>Editar Perfil</h2>
+        </div>
+        <div class="popup-content">
+            <label for="edit-name">Nome:</label>
+            <input type="text" id="edit-name" value="Deepak">
+            
+            <label for="edit-avatar">URL do Avatar:</label>
+            <input type="text" id="edit-avatar" value="https://i.pravatar.cc/150?u=deepak">
+            
+            <button class="popup-btn" id="save-edit-profile-btn">Salvar Alterações</button>
+        </div>
+    </div>
+
+    <!-- Pop-up para Configurações -->
+    <div class="settings-popup" id="settings-popup">
+        <div class="popup-header">
+            <span class="material-icons close-popup" id="close-settings-btn">close</span>
+            <h2>Configurações</h2>
+        </div>
+        <div class="popup-content">
+            <label for="theme-select">Tema:</label>
+            <select id="theme-select">
+                <option value="light">Claro</option>
+                <option value="dark">Escuro</option>
+            </select>
+            
+            <label for="language-select">Idioma:</label>
+            <select id="language-select">
+                <option value="pt-br">Português</option>
+                <option value="en">Inglês</option>
+            </select>
+            
+            <button class="popup-btn" id="save-settings-btn">Salvar Configurações</button>
+        </div>
+    </div>
+    <div class="active-popup" id="active-popup">
+        <h3 class="active-popup-title">Usuários Ativos</h3>
+        <div id="active-list-container">
+            <div class="active-item">
+                <img src="https://i.pravatar.cc/40?u=active1" alt="Active Avatar" class="avatar">
+                <div class="active-info">
+                    <strong>Maria Silva</strong>
+                    <span>Online</span>
+                </div>
+            </div>
+             <div class="active-item">
+                <img src="https://i.pravatar.cc/40?u=active2" alt="Active Avatar" class="avatar">
+                <div class="active-info">
+                    <strong>Pedro Souza</strong>
+                    <span>Ausente</span>
+                </div>
+            </div>
+             <div class="active-item">
+                <img src="https://i.pravatar.cc/40?u=active3" alt="Active Avatar" class="avatar">
+                <div class="active-info">
+                    <strong>Ana Costa</strong>
+                    <span>Online</span>
+                </div>
+            </div>
+            </div>
+    </div>
+    <script src="JS/notes.js"></script>
+    <script src="JS/dashboard.js"></script>
+</body>
+</html>
