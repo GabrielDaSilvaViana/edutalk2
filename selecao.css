@@ -1,0 +1,112 @@
+/* --- Configurações Gerais e Fundo --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6ba9d8, #3c8dc2);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Logo --- */
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    background-color: #f7d147;
+    color: #3e5c76;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 1.1em;
+}
+
+/* --- Container Principal --- */
+.container {
+    display: flex;
+    align-items: center;
+    gap: 100px; /* Espaço entre o card e o texto */
+}
+
+/* --- Card de Seleção (Esquerda) --- */
+.selection-card {
+    background-color: #eaf5ff;
+    padding: 40px;
+    border-radius: 25px;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.back-arrow {
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #555;
+}
+
+.card-header h2 {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #3e5c76;
+}
+
+/* --- Botões de Opção --- */
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.role-button {
+    background-color: #79a8d1;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50px; /* Cantos totalmente arredondados */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.role-button:hover {
+    background-color: #5f8fb8;
+    transform: translateY(-2px); /* Efeito de elevação */
+}
+
+/* --- Seção de Branding (Direita) --- */
+.branding-section {
+    max-width: 500px;
+}
+
+.branding-section h1 {
+    font-size: 3.5em; /* 56px */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.branding-section p {
+    font-size: 1.1em; /* 18px */
+    font-weight: 400;
+    opacity: 0.9;
+}
